@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index-styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Login - Task Manager</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <div class="logo my-3 mx-5" style="display: flex; cursor: pointer;">
+                <div class="logo-icon mx-2">
+                    <h2><i class="bi bi-stickies-fill text-primary"></i></h2>
+                </div>
+                <div class="logo-text mx-2">
+                    <h1>Task Manager</h1>
+                </div>
+            </div>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </div>
+                <div class="nav-item mt-2">
+                    <button id="logoutBtn" onclick="logout()">Log Out</button>
+                </div>
+            </div>
+        </nav>
+        <div class="main">
+            <div class="content">
+                <h1 class="m-3 mt-5">Welcome to <span class="text-primary">Tasks Manager</span></h1>
+                <button id="newTaskBtn" data-bs-toggle="modal" data-bs-target="#taskModal" style="width: auto;">New Task  <i class="bi bi-plus fw-bold"></i></button>
+            </div>
+            <div class="tasks row g-3 m-3">
+                <div class="card col-4">
+                    <div class="card-title h2">New Task 1</div>
+                    <div class="card-body">
+                        <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p class="text-primary text-start">26/09/2024 <i>3:00PM</i></p>
+                        <p class="text-end fw-bold">In Porgress</p>
+                        <button style="background-color: brown;">Delete</button><br><br>
+                        <button>Edit</button>
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <div class="card-title h2">New Task 1</div>
+                    <div class="card-body">
+                        <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p class="text-primary text-start">26/09/2024 <i>3:00PM</i></p>
+                        <p class="text-end fw-bold">In Porgress</p>
+                        <button style="background-color: brown;">Delete</button><br><br>
+                        <button>Edit</button>
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <div class="card-title h2">New Task 1</div>
+                    <div class="card-body">
+                        <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p class="text-primary text-start">26/09/2024 <i>3:00PM</i></p>
+                        <p class="text-end fw-bold">In Porgress</p>
+                        <button style="background-color: brown;">Delete</button><br><br>
+                        <button>Edit</button>
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <div class="card-title h2">New Task 1</div>
+                    <div class="card-body">
+                        <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p class="text-primary text-start">26/09/2024 <i>3:00PM</i></p>
+                        <p class="text-end fw-bold">In Porgress</p>
+                        <button style="background-color: brown;">Delete</button><br><br>
+                        <button>Edit</button>
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <div class="card-title h2">New Task 1</div>
+                    <div class="card-body">
+                        <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p class="text-primary text-start">26/09/2024 <i>3:00PM</i></p>
+                        <p class="text-end fw-bold">In Porgress</p>
+                        <button style="background-color: brown;">Delete</button><br><br>
+                        <button>Edit</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer">
+            <p class="text-center bg-primary p-3">&copy; rben</p>
+        </div>
+    </div>
+
+ 
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true" style="border: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskModalLabel">Add New Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Task Form -->
+                    <form id="taskForm">
+                        <div class="mb-3">
+                            <label for="taskName" class="form-label">Task Title</label>
+                            <input type="text" class="" id="taskName" name="title" required>
+                            <div class="invalid-feedback">Please enter a task name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskName" class="form-label">Task Description</label><br>
+                            <textarea name="body" id="" cols="30" rows="5"></textarea>
+                            <div class="invalid-feedback">Please enter a task name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskDate" class="form-label">Due Date</label>
+                            <input type="datetime-local" class="" id="taskDate" required>
+                            <div class="invalid-feedback">Please enter a valid due date/time.</div>
+                        </div>
+                        <div class="mb-3" style="justify-content: space-between; font-size: 10px;">
+                            <label for="taskCategory" class="form-label">Status</label>
+                            <div class="d-flex">
+                                <div>To Do<input type="radio" name="status" id="" checked></div>
+                                <div> In Progress<input type="radio" name="status" id=""></div>
+                                <div> Done<input type="radio" name="status" id=""></div>
+                            </div>
+                            <div class="invalid-feedback">Please select a category.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="" style="background-color: gray;" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="" onclick="addTask()">Add Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+
+        function addTask() {
+            if (document.getElementById('taskForm').checkValidity()) {
+              
+                alert('Task added successfully!');
+               l
+                var modal = new bootstrap.Modal(document.getElementById('taskModal'));
+                modal.hide();
+            } else {
+                document.getElementById('taskForm').classList.add('was-validated');
+            }
+        }
+
+        function logout() {
+            alert('Logout successful!');
+        }
+    </script>
+</body>
+</html>
